@@ -1,32 +1,22 @@
 package com.music.musicnote
 
-import android.content.ContentResolver
-import android.content.Context
-import android.content.pm.PackageManager
-import android.database.Cursor
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ListView
-import androidx.activity.enableEdgeToEdge
+import android.provider.MediaStore
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.app.ActivityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
 
 
 class MainActivity : AppCompatActivity() {
+
+    var audioList: ArrayList<AudioFileModel> = ArrayList<AudioFileModel>()
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -50,5 +40,6 @@ class MainActivity : AppCompatActivity() {
         val controller = findNavController(R.id.nav_host_fragment)
         return controller.navigateUp() || super.onSupportNavigateUp()
     }
+
 
 }

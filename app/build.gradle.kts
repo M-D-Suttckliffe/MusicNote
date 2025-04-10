@@ -47,7 +47,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.2")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.2")
     implementation ("com.google.android.material:material:1.12.0")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
 }
