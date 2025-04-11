@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerFragment" >
+
+    <ImageView
+        android:id="@+id/mediaFileImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mediaFileTitleText"
+        android:layout_width="196dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:text="Title"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/mediaFileImage"
+        app:layout_constraintStart_toStartOf="@+id/mediaFileImage"
+        app:layout_constraintTop_toBottomOf="@+id/mediaFileImage" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playerLayout"
+        android:layout_width="380dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mediaFileTitleText">
+
+        <SeekBar
+            android:id="@+id/mediaFileSeekBar"
+            android:layout_width="357dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.695"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/playBtn"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/player_btn_bg"
+            android:src="@drawable/baseline_play_arrow_24"
+            app:layout_constraintEnd_toEndOf="@+id/mediaFileSeekBar"
+            app:layout_constraintStart_toStartOf="@+id/mediaFileSeekBar"
+            app:layout_constraintTop_toBottomOf="@+id/mediaFileSeekBar" />
+
+        <ImageButton
+            android:id="@+id/previousBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/player_btn_bg"
+            android:src="@drawable/baseline_skip_previous_24"
+            app:layout_constraintEnd_toStartOf="@+id/playBtn"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/mediaFileSeekBar"
+            app:layout_constraintTop_toTopOf="@+id/playBtn" />
+
+        <ImageButton
+            android:id="@+id/nextBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/player_btn_bg"
+            android:src="@drawable/baseline_skip_next_24"
+            app:layout_constraintEnd_toEndOf="@+id/mediaFileSeekBar"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/playBtn"
+            app:layout_constraintTop_toTopOf="@+id/playBtn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
