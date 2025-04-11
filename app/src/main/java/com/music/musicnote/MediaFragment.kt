@@ -22,7 +22,7 @@ class MediaFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this.context)
-        recyclerView.adapter = AudioAdapter(audioList)
+        recyclerView.adapter = AudioAdapter(audioList) { track -> audioList}
 
         val contentResolver = context?.contentResolver
         val audioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI

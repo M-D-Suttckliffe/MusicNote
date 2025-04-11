@@ -2,10 +2,13 @@ package com.music.musicnote
 
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -17,6 +20,7 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity() {
 
     var audioList: ArrayList<AudioFileModel> = ArrayList<AudioFileModel>()
+
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -41,5 +45,21 @@ class MainActivity : AppCompatActivity() {
         return controller.navigateUp() || super.onSupportNavigateUp()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.drawer_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val controller = findNavController(R.id.nav_host_fragment)
+
+        when (item.itemId) {
+            R.id.nav_media -> controller.navigate(R.id.mediaFragment)
+            R.id.nav_search -> controller.navigate(R.id.searchFragment)
+            R.id.nav_settings -> controller.navigate(R.id.settingsFragment)
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
 
 }
